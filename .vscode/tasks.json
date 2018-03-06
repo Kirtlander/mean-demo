@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "build:server:watch",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "_____"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Webpack is watching the files.*$",
+                    "endsPattern": "^.*server\\.js.*\\[emitted\\].*$"
+                }
+            }
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "_____"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*\\*\\* NG Live Development Server is listening on localhost.*$",
+                    "endsPattern": "^.*webpack\\: Compiled successfully\\.*$"
+                }
+            }
+        }
+    ]
+}
